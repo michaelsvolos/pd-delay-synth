@@ -1,4 +1,4 @@
-#N canvas 504 23 572 732 12;
+#N canvas 614 23 572 732 12;
 #X floatatom 15 70 5 0 0 0 - - -, f 5;
 #X floatatom 59 71 5 0 0 0 - - -, f 5;
 #X obj 23 41 notein;
@@ -29,54 +29,45 @@
 #000000 #000000 12700 1;
 #X floatatom 98 466 5 0 0 0 - - -, f 5;
 #X obj 158 320 vsl 15 128 1 6000 1 0 amp-r empty R 0 -9 0 10 #fcfcfc
-#000000 #000000 9400 1;
+#000000 #000000 8000 1;
 #X floatatom 140 468 5 0 0 0 - - -, f 5;
 #X obj 196 320 vsl 15 128 0 1 0 0 amp-vel-snd empty Vel._amt 0 -9 0
 10 #fcfcfc #000000 #000000 0 1;
 #X floatatom 183 467 5 0 0 0 - - -, f 5;
 #X obj 255 304 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 19 502 Power;
-#X obj 15 532 vsl 15 128 1.5 6000 1 0 pwr-a empty A 0 -9 0 10 #fcfcfc
+#X obj 15 532 vsl 15 128 1.5 6000 1 0 imp-a empty A 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 57 532 vsl 15 128 1 6000 1 0 pwr-d empty D 0 -9 0 10 #fcfcfc
+#X obj 57 532 vsl 15 128 1 6000 1 0 imp-d empty D 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 102 532 vsl 15 128 0 100 0 0 pwr-s empty S 0 -9 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 149 533 vsl 15 128 1 6000 1 0 pwr-r empty R 0 -9 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 196 532 vsl 15 128 0 1 0 0 pwr-vel empty Vel._amt 0 -9 0 10
-#fcfcfc #000000 #000000 0 1;
 #X floatatom 4 673 5 0 0 0 - - -, f 5;
 #X floatatom 48 674 5 0 0 0 - - -, f 5;
-#X floatatom 91 673 5 0 0 0 - - -, f 5;
-#X floatatom 136 674 5 0 0 0 - - -, f 5;
-#X floatatom 185 675 5 0 0 0 - - -, f 5;
-#X obj 249 533 vsl 15 128 -2.5 2.5 0 0 pwr-env-amt pwr-env-amt-rcv
-Env._amt 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 238 676 5 0 0 0 - - -, f 5;
-#X msg 281 590 0;
-#X obj 279 627 s pwr-env-amt-rcv;
 #X obj 16 125 poly 6 1;
 #X obj 237 68 catch~ outs1;
 #X obj 329 68 catch~ outs2;
 #X obj 236 93 *~ 1;
 #X obj 329 91 *~ 1;
 #X obj 436 27 vsl 15 128 0 1 0 1 empty empty Volume 0 -9 0 10 #fcfcfc
-#000000 #000000 8200 1;
+#000000 #000000 5000 1;
 #X floatatom 423 169 5 0 0 0 - - -, f 5;
-#X obj 351 324 vsl 15 128 0 0.99 0 0 fb-snd empty Feedback 0 -9 0 10
-#fcfcfc #000000 #000000 12700 1;
+#X obj 351 324 vsl 15 128 0 1 0 0 fb-snd empty Feedback 0 -9 0 10 #fcfcfc
+#000000 #000000 12700 1;
 #X floatatom 337 468 5 0 0 0 - - -, f 5;
 #X obj 247 274 loadbang;
-#X obj 436 326 vsl 15 128 1 15 0 1 damp-snd empty Damping 0 -9 0 10
-#fcfcfc #000000 #000000 12700 1;
-#X floatatom 422 469 5 0 0 0 - - -, f 5;
+#X obj 422 325 vsl 15 128 50 15000 1 1 damp-snd empty Damping 0 -9
+0 10 #fcfcfc #000000 #000000 10800 1;
+#X floatatom 405 468 5 0 0 0 - - -, f 5;
+#X obj 489 326 vsl 15 128 1 2 0 0 clip-snd empty Distortion 0 -9 0
+10 #fcfcfc #000000 #000000 150 1;
+#X floatatom 474 468 5 0 0 0 - - -, f 5;
+#X text 19 502 Impulse;
+#X obj 255 517 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 2 0 0 0;
 #X connect 2 1 1 0;
-#X connect 3 0 46 0;
+#X connect 3 0 35 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 1 7 0;
@@ -94,23 +85,25 @@ Env._amt 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 30 0 24 0;
 #X connect 30 0 26 0;
 #X connect 30 0 28 0;
-#X connect 32 0 37 0;
-#X connect 33 0 38 0;
-#X connect 34 0 39 0;
-#X connect 35 0 40 0;
-#X connect 36 0 41 0;
+#X connect 30 0 42 0;
+#X connect 30 0 45 0;
+#X connect 30 0 47 0;
+#X connect 30 0 50 0;
+#X connect 31 0 33 0;
+#X connect 32 0 34 0;
+#X connect 35 0 4 0;
+#X connect 35 1 4 1;
+#X connect 35 2 4 2;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 38 0 18 0;
+#X connect 39 0 18 1;
+#X connect 40 0 41 0;
+#X connect 40 0 39 1;
+#X connect 40 0 38 1;
 #X connect 42 0 43 0;
-#X connect 44 0 45 0;
-#X connect 46 0 4 0;
-#X connect 46 1 4 1;
-#X connect 46 2 4 2;
-#X connect 47 0 49 0;
-#X connect 48 0 50 0;
-#X connect 49 0 18 0;
-#X connect 50 0 18 1;
-#X connect 51 0 52 0;
-#X connect 51 0 50 1;
-#X connect 51 0 49 1;
-#X connect 53 0 54 0;
-#X connect 55 0 30 0;
-#X connect 56 0 57 0;
+#X connect 44 0 30 0;
+#X connect 45 0 46 0;
+#X connect 47 0 48 0;
+#X connect 50 0 31 0;
+#X connect 50 0 32 0;
